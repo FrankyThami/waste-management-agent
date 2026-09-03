@@ -1,0 +1,17 @@
+{
+  "categories": ["metal", "paper", "glass", "plastic", "organic", "unsorted waste"],
+  "scenes": [
+    {
+      "scene_id": "scene_001",
+      "image": "images/scene_001.jpeg",
+      "layout": "separated",
+      "objects": [
+        {"label": "drink can", "category": "metal"},
+        {"label": "plastic bottle", "category": "plastic"},
+        {"label": "pink carton box", "category": "paper"},
+        {"label": "eggshell", "category": "organic"},
+        {"label": "eggplant", "category": "organic"}
+      ]
+    }
+  ]
+}
