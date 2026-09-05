@@ -1,0 +1,10 @@
+{
+  "status": "MOCK - not yet calibrated against real hardware",
+  "note": "Identity transform placeholder. Replace with real eye-to-hand calibration once the robot arm is available (see Stage 2, Step 2.4 in the roadmap).",
+  "rotation_matrix": [
+    [1.0, 0.0, 0.0],
+    [0.0, 1.0, 0.0],
+    [0.0, 0.0, 1.0]
+  ],
+  "translation_vector_mm": [0.0, 0.0, 0.0]
+}

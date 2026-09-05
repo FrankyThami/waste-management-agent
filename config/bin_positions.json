@@ -1,0 +1,11 @@
+{
+  "status": "PLACEHOLDER - measure real values once bins and arm are physically set up",
+  "bins": {
+    "metal": [0, 0, 0],
+    "paper": [0, 0, 0],
+    "glass": [0, 0, 0],
+    "plastic": [0, 0, 0],
+    "organic": [0, 0, 0],
+    "unsorted": [0, 0, 0]
+  }
+}
