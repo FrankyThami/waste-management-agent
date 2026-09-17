@@ -126,3 +126,68 @@ ALL_PROMPTS = {
     "prompt_5_grasp_priority": PROMPT_5_GRASP_PRIORITY,
     "prompt_6_graspability": PROMPT_6_GRASPABILITY,
 }
+
+PROMPT_LOCATE_TARGETS = f"""
+{AGENT_ROLE} Try to find exactly these two objects in the image:
+1. "yellow paper" - a piece of yellow-colored paper or paper-like item.
+2. "red dustbin" - a red-colored bin or container used as the drop-off destination.
+
+For each of these two targets, return a JSON object with:
+- "target": the target name, exactly "yellow paper" or "red dustbin".
+- "found": true if you can see this object in the image, false if not.
+- "point": the center of the object in [y, x] format, normalized to the range [0, 1000]. Omit this field if found is false.
+
+The output must be a valid JSON list with exactly two entries, one per target, for example:
+[
+  {{"target": "yellow paper", "found": true, "point": [y1, x1]}},
+  {{"target": "red dustbin", "found": true, "point": [y2, x2]}}
+]
+
+{JSON_ONLY_INSTRUCTION}
+"""
+def build_task_grounding_prompt(instruction: str) -> str:
+    return f"""
+{AGENT_ROLE} A user gave this instruction: "{instruction}"
+
+The scene may contain SEVERAL different objects at once - only pick
+out the ones the instruction actually refers to. Ignore every other
+object visible in the image, even if some of them look similar to
+what you're looking for.
+
+This should describe a pick-and-place task: picking one object up and
+placing it into or onto another.
+
+If the instruction does NOT describe that kind of task, return an
+empty JSON list: []
+
+If it DOES, return a JSON list with exactly two objects:
+[
+  {{"role": "object1", "label": "short name of the object to pick up", "found": true, "box_2d": [ymin, xmin, ymax, xmax]}},
+  {{"role": "object2", "label": "short name of the destination", "found": true, "box_2d": [ymin, xmin, ymax, xmax]}}
+]
+box_2d is normalized to 0-1000. If either object isn't visible right
+now, set its "found" to false and omit "box_2d" for it. If multiple
+objects could match a description, choose the single best match to
+the instruction's wording and ignore the rest.
+
+{JSON_ONLY_INSTRUCTION}
+"""
+
+
+def build_relocate_prompt(object1_label: str, object2_label: str) -> str:
+    return f"""
+{AGENT_ROLE} The scene may contain several different objects. Find
+ONLY these two specific ones and ignore everything else, even objects
+that look similar:
+1. "{object1_label}"
+2. "{object2_label}"
+
+For each, return a JSON object with "label" (exactly as given above),
+"found" (true or false), and "box_2d" ([ymin, xmin, ymax, xmax],
+normalized 0-1000, omit if not found).
+
+Return a JSON list of exactly two objects, one per target above, in
+the same order.
+
+{JSON_ONLY_INSTRUCTION}
+"""
