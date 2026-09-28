@@ -50,7 +50,7 @@ TAG_PADDING = 6
 # purely for nicer annotated images. The category we log still comes
 # from "material".
 ANNOTATION_PROMPT = f"""
-{AGENT_ROLE} Identify all waste objects in the image.
+{AGENT_ROLE} Identify all waste objects in the scene.
 
 For each object, return a JSON object with:
 - "box_2d": bounding box as [ymin, xmin, ymax, xmax], normalized to 0-1000.
