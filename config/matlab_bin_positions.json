@@ -1,0 +1,11 @@
+{
+  "status": "EXAMPLE fingertip release positions for the MATLAB simulation only (metres, robot base frame, z up, ground = 0). Replace with real measured values for the real arm.",
+  "bins": {
+    "paper":    [0.60, -0.30, 0.15],
+    "plastic":  [0.60, -0.18, 0.15],
+    "metal":    [0.60, -0.06, 0.15],
+    "glass":    [0.60,  0.06, 0.15],
+    "organic":  [0.60,  0.18, 0.15],
+    "unsorted": [0.60,  0.30, 0.15]
+  }
+}

@@ -11,8 +11,8 @@ not a blind "success" - everything else stays mocked.
 import numpy as np
 from langchain_core.tools import tool
 
-from perception.gemini_classifier import classify_image
-from prompts.prompts_v1 import PROMPT_LOCATE_TARGETS
+from src.models.gemini_classifier import classify_image
+from src.models.prompts_v1 import PROMPT_LOCATE_TARGETS
 from adaptive_validation import scene_state
 from adaptive_validation.geometry import locate_object as _locate_object_3d
 

@@ -27,8 +27,8 @@ import numpy as np
 import pyrealsense2 as rs
 from PIL import Image
 
-from perception.gemini_classifier import classify_image, ClassificationError
-from prompts.prompts_v1 import build_task_grounding_prompt, build_relocate_prompt
+from src.models.gemini_classifier import classify_image, ClassificationError
+from src.models.prompts_v1 import build_task_grounding_prompt, build_relocate_prompt
 
 WINDOW_NAME = "Live Task Agent (Q to quit)"
 REFRESH_INTERVAL_S = 2.0  # a Gemini call takes a couple seconds - can't do this every frame

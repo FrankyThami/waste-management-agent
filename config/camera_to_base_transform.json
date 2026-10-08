@@ -1,10 +1,29 @@
 {
-  "status": "MOCK - not yet calibrated against real hardware",
-  "note": "Identity transform placeholder. Replace with real eye-to-hand calibration once the robot arm is available (see Stage 2, Step 2.4 in the roadmap).",
+  "status": "PROVISIONAL - table plane + one rough distance (robot base assumed 28 cm beyond the top edge of the image, on the image's centre line). Replace with a real calibration before judging real-arm accuracy.",
+  "saved_at": "2026-10-05T10:18:38",
+  "convention": "p_base = rotation_matrix @ p_camera + translation_vector_m ; metres ; base z is up, z = 0 is the tabletop",
+  "note": "Built by scripts/set_provisional_frame.py",
   "rotation_matrix": [
-    [1.0, 0.0, 0.0],
-    [0.0, 1.0, 0.0],
-    [0.0, 0.0, 1.0]
+    [
+      0.00010217755952963368,
+      0.9993208552756047,
+      -0.03684857895469349
+    ],
+    [
+      0.9999961555248102,
+      0.0,
+      0.002772893001821623
+    ],
+    [
+      0.002771009806168123,
+      -0.03684872061868568,
+      -0.99931701341137
+    ]
   ],
-  "translation_vector_mm": [0.0, 0.0, 0.0]
+  "translation_vector_m": [
+    0.455902087276958,
+    -0.002066626115277944,
+    0.4143432923266162
+  ],
+  "robot_distance_m": 0.28
 }

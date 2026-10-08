@@ -1,0 +1,101 @@
+{
+  "run_at": "2026-10-02 14:37:19",
+  "results": [
+    {
+      "id": "c01_plain_list",
+      "command": "Please sort everything: paper goes to the blue bin, metal to the grey bin, glass to the red bin.",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "c02_explicit_order_first",
+      "command": "Metal first, then glass, then paper. Metal -> silver bin, glass -> green bin, paper -> blue bin.",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "c03_before_after_words",
+      "command": "Before anything else handle the plastic, red bin. After that, organic waste into the brown bin.",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "c04_typos_papre_metl",
+      "command": "Put the papre in the blue bin and the metl in the black bin",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "c05_two_classes_one_bin",
+      "command": "Glass and metal both go in the grey bin.",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "c06_unsorted_waste_phrase",
+      "command": "Organic waste into the purple bin, then the unsorted waste into the orange bin.",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "c07_only_one_class",
+      "command": "Only sort the plastic, put it in the yellow bin.",
+      "status": "ERROR",
+      "detail": "ServerError: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}"
+    },
+    {
+      "id": "c08_glass_last",
+      "command": "Do the glass last. Glass goes in the red bin, plastic goes in the blue bin and paper in the green bin.",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "c09_second_then_first",
+      "command": "Second put the glass into the red bin, first put the paper into the blue bin.",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "c10_colon_style_and_order_sentence",
+      "command": "plastic: red. paper: blue. organic: green. Go in this order: organic, paper, plastic.",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "c11_capitals_typo_glsas",
+      "command": "PUT THE GLSAS IN THE YELLOW BIN FIRST, THEN METAL IN THE GREY BIN",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "c12_typos_orgnaic_plsatic",
+      "command": "Orgnaic waste into the green bin and plsatic into the red bin.",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "c13_refuse_cans",
+      "command": "put the cans into the grey bin",
+      "status": "PASS",
+      "detail": "refused, as it should: I couldn't tell which waste class you meant by: cans. The classes I know are: paper, metal, organic, unsorted, plastic, glass. Please rephrase."
+    },
+    {
+      "id": "c14_refuse_no_waste_at_all",
+      "command": "Clean the table and switch off the lights.",
+      "status": "PASS",
+      "detail": "refused, as it should: I couldn't tell which waste class you meant by: Clean the table, switch off the lights. The classes I know are: paper, metal, organic, unsorted, plastic, glass. Please rephrase."
+    },
+    {
+      "id": "c15_refuse_contradiction",
+      "command": "Plastic goes in the red bin and also in the blue bin.",
+      "status": "PASS",
+      "detail": "refused, as it should: I couldn't tell which waste class you meant by: plastic. The classes I know are: paper, metal, organic, unsorted, plastic, glass. Please rephrase."
+    },
+    {
+      "id": "c16_refuse_no_bin_given",
+      "command": "Sort the plastic please.",
+      "status": "PASS",
+      "detail": "refused, as it should: I couldn't turn that into a valid mission (last problem: bin_rules.0.bin_color: Value error, bin_color cannot be empty). Please rephrase using the class names (paper, metal, organic, unsorted, plastic, glass) and name each bin by its colour."
+    }
+  ]
+}

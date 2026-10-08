@@ -12,8 +12,8 @@ import pyrealsense2 as rs
 import numpy as np
 from PIL import Image
 
-from perception.gemini_classifier import classify_image
-from prompts.prompts_v1 import PROMPT_LOCATE_TARGETS
+from src.models.gemini_classifier import classify_image
+from src.models.prompts_v1 import PROMPT_LOCATE_TARGETS
 from adaptive_validation.geometry import locate_object
 
 

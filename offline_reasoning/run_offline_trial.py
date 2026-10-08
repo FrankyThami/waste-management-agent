@@ -26,8 +26,8 @@ import numpy as np
 import pyrealsense2 as rs
 from PIL import Image
 
-from prompts.prompts_v1 import AGENT_ROLE, WASTE_CATEGORIES, JSON_ONLY_INSTRUCTION
-from perception.gemini_classifier import classify_image, ClassificationError
+from src.models.prompts_v1 import AGENT_ROLE, WASTE_CATEGORIES, JSON_ONLY_INSTRUCTION
+from src.models.gemini_classifier import classify_image, ClassificationError
 from offline_reasoning.results_store import (
     append_trial, delete_trial, next_trial_number, normalize_class, read_trials,
 )

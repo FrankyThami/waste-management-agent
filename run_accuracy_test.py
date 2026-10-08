@@ -23,7 +23,7 @@ from google import genai
 from PIL import Image
 from tenacity import retry, stop_after_attempt, wait_exponential
 
-from prompts.prompts_v1 import PROMPT_1_OBJECT_CENTERS
+from src.models.prompts_v1 import PROMPT_1_OBJECT_CENTERS
 
 # ---------- Logging ----------
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
